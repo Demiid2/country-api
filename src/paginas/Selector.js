@@ -27,8 +27,7 @@ function Selector() {
     const selectedCountry = (pais) => {
         fetch(`https://restcountries.com/v2/name/${pais}`)
             .then(res => {
-                console.log(await res.text())
-                // return res.json()
+                 return res.json()
             })
             .then(post => {
                 console.log(post)
@@ -53,7 +52,7 @@ function Selector() {
                      primerPais.map(pais1 => (
                      <div key={pais1.alpha2Code}>   
                         <h1>{pais1.name}</h1>
-                        <img src={pais1.flag} />
+                        <img src={pais1.flag} alt={pais1.name} />
                      </div>
                      
                      ))
